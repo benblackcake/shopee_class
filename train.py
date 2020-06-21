@@ -7,6 +7,12 @@ from utils import DataSet,read_test_set,read_train_sets
 
 
 def main():
+    classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',\
+      '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',\
+      '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', \
+      '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', \
+      '40', '41']
+    num_classes = len(classes)
     '''Configuration and Hyperparameters'''
     # Convolutional Layer 1.
     filter_size1 = 3 
@@ -43,12 +49,7 @@ def main():
     data = read_train_sets(train_path, img_size, classes, validation_size=validation_size)
     test_images, test_ids = read_test_set(test_path, img_size)
 
-    classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',\
-          '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',\
-          '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', \
-          '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', \
-          '40', '41']
-    num_classes = len(classes)
+
 
 
 
