@@ -198,4 +198,4 @@ def optimize(num_iterations):
     # Print the time-usage
     print("Time elapsed: " + str(timedelta(seconds=int(round(time_dif)))))
 
-optimize(num_iterations=5000)
+optimize(num_iterations=500000)
