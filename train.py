@@ -18,11 +18,7 @@ from datetime import timedelta
 # if __name__ == "__main__":
 
 
-classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',\
-  '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',\
-  '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', \
-  '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', \
-  '40', '41']
+classes = ['0', '1', '2', '3', '4', '5', '6']
 num_classes = len(classes)
 '''Configuration and Hyperparameters'''
 # Convolutional Layer 1.
@@ -52,6 +48,7 @@ img_shape = (img_size, img_size)
 
 batch_size = 32
 validation_size = .16
+early_stopping = None  # use None if you don't want to implement early stoping
 
 train_path = 'done_dataset/train/'
 test_path = 'done_dataset/test/'
@@ -139,7 +136,7 @@ def print_progress(epoch, feed_dict_train, feed_dict_validate, val_loss):
     val_acc = session.run(accuracy, feed_dict=feed_dict_validate)
     msg = "Epoch {0} --- Training Accuracy: {1:>6.1%}, Validation Accuracy: {2:>6.1%}, Validation Loss: {3:.3f}"
     print(msg.format(epoch + 1, acc, val_acc, val_loss))
-    
+
 def optimize(num_iterations):
     # Ensure we update the global variable rather than a local copy.
     global total_iterations
