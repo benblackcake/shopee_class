@@ -2,7 +2,7 @@
 import tensorflow as tf
 import numpy as np
 import cv2
-from utils import DataSet
+from utils import DataSet,read_test_set,read_train_sets
 
 
 
@@ -40,9 +40,9 @@ def main():
     test_path = 'done_dataset/test/'
     checkpoint_dir = "models/"
 
-    data = dataset.read_train_sets(train_path, img_size, classes, validation_size=validation_size)
-    test_images, test_ids = dataset.read_test_set(test_path, img_size)
-    
+    data = read_train_sets(train_path, img_size, classes, validation_size=validation_size)
+    test_images, test_ids = read_test_set(test_path, img_size)
+
     classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',\
           '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',\
           '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', \
